@@ -1,8 +1,11 @@
 // Types in typescript --->
 
 // 1. primitive data types --->
-// Primitive types represent single, simple values.
-// They are immutable (cannot be changed directly) and stored by value.
+
+/**
+ * Primitive types represent single, simple values.
+ * They are immutable (cannot be changed directly) and stored by value.
+ */
 
 // a. number
 let age: number = 20;
@@ -40,9 +43,11 @@ let bigInt: bigint = 12345678901234567890n;
 
 
 // 2. Non-Primitive (Reference) Types
-// Non-primitive types represent collections or complex data structures.
-// They are stored by reference.
 
+/**
+ * Non-primitive types represent collections or complex data structures.
+ * They are stored by reference.
+ */
 // a. object
 let user: { name: string, age: number } = {
   name: "Rampratap",
@@ -61,7 +66,10 @@ let nums: number[] = [1, 2, 3, 4, 5];
 // console.log(fruits,nums);
 
 // c. tuple
-// Fixed length array with fixed types, order matters here and worked like array.
+
+/**
+ * Fixed length array with fixed types, order matters here and worked like array.
+ */
 let identity: [string, number, string, number, string] = ["Rampratap", 25, "Agra", 7457807892, "Male"];
 // console.log(`Indentity of a user --> name : ${identity[0]} , Age : ${identity[1]} , Location : ${identity[2]} , Contact No: ${identity[3]} , Gender : ${identity[4]}`);
 
@@ -72,28 +80,37 @@ function users(name: string, address: string): string {
 // console.log(users("Rampratap","Agra"));
 
 // e. any
-// Can hold any type (primitive or non-primitive) , didnt check data types .
+/**
+ * Can hold any type (primitive or non-primitive) , didnt check data types .
+ */
 let randomValue: any = 42;
 randomValue = 'Now I am a string';
 randomValue = true;
 // console.log(randomValue);
 
 // f. unknown (Special Safe Type)
-// Safer alternative to any , check type 
-// // Using unknown type instead of any helps in type safety
-
+/**
+ * Using unknown type instead of any helps in type safety
+ * Safer alternative to any , check type 
+ */
 // g. union type(Type Combination)
-// Allows multiple types.
+/**
+ * Allows multiple types.
+ */
 let status: "sucess" | "true" = "true";
 let ids: string | number = 43;
 // console.log(status, ids);
 
 
 // Interfaces vs Types --->
-// Both are used to define the shape of data.
-
+/**
+ *  Both are used to define the shape of data.
+ */
 // Interface
-// An interface defines the structure of an object.
+
+/**
+ * An interface defines the structure of an object.
+ */
 interface User {
   name: string;
   age: number;
@@ -119,7 +136,10 @@ let employees: Employee = {
 // console.log(employees);
 
 //  types -->
-// A type alias is a custom name for any type (object, union, primitive, etc).
+
+/**
+ * A type alias is a custom name for any type (object, union, primitive, etc).
+ */
 type Users = {
   name: string;
   age: number;
@@ -131,7 +151,9 @@ let userss: Users = {
 // console.log(userss);
 
 // Typing Props (React) --->
-// Typing props means defining what data a component expects.
+/**
+ * Typing props means defining what data a component expects.
+ */
 interface ButtonProps {
   label: string;
   onClick: () => void;
@@ -160,7 +182,9 @@ Button({                                                 // Using the Button com
 
 
 //Typing State (React)
-// Typing state ensures state values follow a specific type.
+/**
+ * Typing state ensures state values follow a specific type.
+ */
 interface State {
   count: number;
   text: string;
@@ -204,15 +228,19 @@ let res = fetchUser();
 // console.log(res)
 
 // Avoiding any --->
-// any disables type checking.
+/**
+ * any disables type checking.
+ */
 let datas: any = 10;
 datas = "hello";
 datas = {};
 
-// Use unknown Instead
+
+/**
+ * Use unknown Instead
+ */
 let values: unknown = "hello";
 
 if (typeof values === "string") {
   console.log(values.toUpperCase());
 }
-
