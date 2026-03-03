@@ -11,3 +11,4 @@ function signup(){
 }
 
 console.log("create a new branch features");
+console.log("branches is switched from master to main");
