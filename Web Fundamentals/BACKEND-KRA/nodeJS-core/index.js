@@ -92,4 +92,3 @@ console.log("Hashed password:", hash);
 // Example: Generating a Random Token
 const token = crypto.randomBytes(16).toString("hex");
 console.log("Random token:", token);
-
