@@ -1,0 +1,94 @@
+ADVANCED POSTGRESQL NOTES
+
+1. JOINS
+
+Joins are used to combine rows from multiple tables based on related columns.
+
+Types of Joins:
+
+INNER JOIN
+Returns only the matching rows from both tables.
+
+LEFT JOIN
+Returns all rows from the left table and matching rows from the right table.
+
+FULL JOIN
+Returns rows when there is a match in either table.
+
+Joins are commonly used in relational databases where data is normalized across multiple tables.
+
+
+2. INDEXES
+
+Indexes improve query performance by allowing PostgreSQL to quickly locate rows without scanning the entire table.
+
+Example Use Cases:
+- Searching by email
+- Filtering by user_id
+- Sorting large datasets
+
+Indexes are created on frequently queried columns.
+
+
+3. TRANSACTIONS
+
+A transaction is a group of SQL operations executed as a single unit.
+
+Key Commands:
+
+BEGIN
+Starts a transaction.
+
+COMMIT
+Saves all changes permanently.
+
+ROLLBACK
+Cancels all changes if an error occurs.
+
+Transactions help maintain data consistency.
+
+
+4. JSONB COLUMNS
+
+JSONB allows PostgreSQL to store JSON data in a binary format.
+
+Advantages:
+- Efficient storage
+- Faster querying
+- Supports indexing
+
+Common use cases:
+- User profiles
+- Dynamic metadata
+- Configuration storage
+
+
+5. RANGE PARTITIONING
+
+Partitioning splits a large table into smaller tables called partitions.
+
+Range partitioning divides data based on value ranges such as:
+
+- Dates
+- IDs
+- Numeric values
+
+Benefits:
+- Faster queries
+- Better performance on large datasets
+- Easier data management
+
+
+6. PG_DUMP AND PG_RESTORE
+
+pg_dump is used to create a backup of a PostgreSQL database.
+
+Example:
+pg_dump -U postgres dbname > backup.sql
+
+pg_restore or psql is used to restore a database from a backup.
+
+Example:
+psql -U postgres dbname < backup.sql
+
+Backups are important for disaster recovery and database migration.
